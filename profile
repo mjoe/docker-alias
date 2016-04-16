@@ -58,4 +58,4 @@ docker_build() { docker build -t $1 .; }
 docker_alias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 
 # Update local docker-alias repo
-docker_alias_update() { source ~/.da_home && cd $DA_HOME && git pull }
+docker_alias_update() { source ~/.da_home && cd $DA_HOME && git pull; }
