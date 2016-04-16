@@ -11,13 +11,13 @@ Inspired by [tcnksm/docker-alias](https://github.com/tcnksm/docker-alias)
 The following one-liner creates a directory for keeping this git repo local and invokes the supplied install script.
 
 ```bash
-curl -fsSL https://raw.github.com/mjoe/docker-alias/master/install.sh | sh
+curl -sSL https://raw.github.com/mjoe/docker-alias/master/install.sh | sh
 ```
 
 The repo will be stored in the current working directory. You can choose an other location by exporting an env variable `DA_HOME` before the install script is executed.
 
 ```bash
-export DA_HOME=/my/location && curl -fsSL https://raw.github.com/mjoe/docker-alias/master/install.sh | sh
+export DA_HOME=/my/location && curl -sSL https://raw.github.com/mjoe/docker-alias/master/install.sh | sh
 ```
 
 
