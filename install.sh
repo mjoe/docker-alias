@@ -16,8 +16,8 @@ os_name=`uname -s`
 [ -z "$sed_cmd" ] && echo '[ERROR]: sed binary not found. Abort!' && exit 1
 
 # first cd to DA_HOME if set
-[ -n "$DA_HOME" ] && DA_HOME=`pwd`
-echo "DA_HOME="$DA_HOME >~/.da_home
+[ -n "$DA_HOME" ] && export DA_HOME=`pwd`
+echo "DA_HOME=$DA_HOME" >~/.da_home
 cd $DA_HOME
 $git_cmd clone $git_repo
 
