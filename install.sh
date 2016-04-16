@@ -54,7 +54,7 @@ for shell in $shells; do
 done
 
 if [ $os_name = "Darwin" ]; then
-	source ~/.bash_profile
+	. ~/.bash_profile
 else
-	source ~/.bashrc
+	. ~/.bashrc
 fi
