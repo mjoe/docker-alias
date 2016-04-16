@@ -52,3 +52,9 @@ create_profile() {
 for shell in $shells; do
 	[ -x `which $shell` ] && create_profile $shell
 done
+
+if [ $os_name = "Darwin" ]; then
+	source ~/.bash_profile
+else
+	source ~/.bashrc
+fi
