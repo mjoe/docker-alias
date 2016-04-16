@@ -8,13 +8,13 @@ Inspired by [tcnksm/docker-alias](https://github.com/tcnksm/docker-alias)
 
 ## Install
 
-The following one-liner creates a directory for keeping this git repo local and invokes the supplied install script.
+The following one-liner installs the profile on your system.
 
 ```bash
 curl -sSL https://raw.github.com/mjoe/docker-alias/master/install.sh | sh
 ```
 
-The repo will be stored in the current working directory. You can choose an other location by exporting an env variable `DA_HOME` before the install script is executed.
+The git repo will be cloned in the current working directory. You can choose an other location by exporting an env variable `DA_HOME` before the install script is executed.
 
 ```bash
 export DA_HOME=/my/location && curl -sSL https://raw.github.com/mjoe/docker-alias/master/install.sh | sh
