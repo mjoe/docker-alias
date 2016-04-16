@@ -1,4 +1,3 @@
-# BEGIN zshrc
 # $Id:$
 # ------------------------------------
 # Docker alias and function
@@ -17,7 +16,7 @@ alias dpa="docker ps -a"
 alias di="docker images"
 
 # Get container IP
-alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dip="docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
 # Run deamonized container, e.g., $dkd base /bin/echo hello
 alias dkd="docker run -d -P"
@@ -29,24 +28,34 @@ alias dki="docker run -i -t -P"
 alias dex="docker exec -i -t"
 
 # Stop all containers
-dstop() { docker stop $(docker ps -a -q); }
+alias dstop='docker stop $(docker ps -a -q)'
 
 # Remove all containers
-drm() { docker rm $(docker ps -a -q); }
+alias drm='docker rm $(docker ps -a -q)'
 
 # Stop and Remove all containers
 alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
 # Remove all images
-dri() { docker rmi $(docker images -q); }
+alias dri='docker rmi $(docker images -q)'
 
-# Dockerfile build, e.g., $dbu tcnksm/test
-dbu() { docker build -t=$1 .; }
+# Remove all images with force switch
+alias drif='docker rmi -f $(docker images -q)'
+
+# Docker build function alias
+alias dbu='docker_build $@'
+
+# Docker alias function alias
+alias dalias='docker_alias $@'
+
+# Docker alias update function alias
+alias daup='docker_alias_update $@'
+
+# Dockerfile build, e.g., $dbu mjoe/test
+docker_build() { docker build -t $1 .; }
 
 # Show all alias related docker
-dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+docker_alias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 
-#  Update myself
-dupdate-me() { grep -l -m 1 -s 'dupdate-me' ~/.zshrc ~/.bashrc ~/.bash_profile; }
-
-# END zshrc
+# Update local docker-alias repo
+docker_alias_update() { source ~/.da_home && cd $DA_HOME && git pull }
