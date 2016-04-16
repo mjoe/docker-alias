@@ -1,8 +1,3 @@
-# $Id:$
-# ------------------------------------
-# Docker alias and function
-# ------------------------------------
-
 # Get latest container ID
 alias dl="docker ps -l -q"
 
