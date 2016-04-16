@@ -17,7 +17,7 @@ os_name=`uname -s`
 
 # first cd to DA_HOME if set
 [ -n "$DA_HOME" ] && DA_HOME=`pwd`
-echo "DA_HOME=$DA_HOME" >~/.da_home
+echo "DA_HOME="$DA_HOME >~/.da_home
 cd $DA_HOME
 $git_cmd clone $git_repo
 
