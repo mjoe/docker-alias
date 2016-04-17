@@ -14,6 +14,14 @@ The following one-liner installs the profile on your system.
 curl -sSL https://raw.github.com/mjoe/docker-alias/master/install.sh | sh
 ```
 
+### Details
+- clone git repo to current working directory or `DA_HOME`
+- add an entry for the profile rc files mentioned above
+- source the bash rc profile
+- update docker-alias with command `daup`
+
+### Optional
+
 The git repo will be cloned in the current working directory. You can choose an other location by exporting an env variable `DA_HOME` before the install script is executed.
 
 ```bash
