@@ -22,6 +22,9 @@ alias dki="docker run -i -t -P"
 # Execute interactive container, e.g., $dex base /bin/bash
 alias dex="docker exec -i -t"
 
+# Search docker hub registry, e.g., $dse ubuntu
+alias dse="docker search"
+
 # Stop all containers
 alias dstop='docker stop $(docker ps -a -q)'
 
