@@ -50,7 +50,7 @@ create_profile() {
 }
 
 for shell in $shells; do
-	[ -x `which $shell` ] && create_profile $shell
+	[ -x "`which $shell`" ] && create_profile $shell
 done
 
 if [ $os_name = "Darwin" ]; then
